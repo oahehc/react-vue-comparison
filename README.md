@@ -5,6 +5,7 @@ This cheat sheet is for someone who already familiar with React.js or Vue.js. It
 - [Basic-Component](#basic-component)
 - [Prop](#prop)
 - [Event-Binding](#event-binding)
+- [Custom-Event](#custom-event)
 - [State](#state)
 - [Change-State](#change-state)
 - [Conditional-Rendering](#conditional-rendering)
@@ -28,7 +29,7 @@ class MyReactComponent extends React.Component {
 }
 ```
 
-#### Functional component
+#### Function component
 
 ```javascript
 function MyReactComponent() {
@@ -53,6 +54,10 @@ function MyReactComponent(props) {
   const { name } = props;
 
   return <h1>Hello {name}</h1>;
+}
+
+MyReactComponent.propTypes = {
+  name: PropTypes.string,
 }
 
 ...
@@ -98,13 +103,13 @@ class MyReactComponent extends React.Component {
 }
 ```
 
-#### Functional component
+#### Function component
 
 ```javascript
 function MyReactComponent() {
-  function save() {
+  const save = () => {
     console.log("save");
-  }
+  };
 
   return <button onClick={save}>Save</button>;
 }
@@ -127,6 +132,70 @@ function MyReactComponent() {
 </script>
 ```
 
+## Custom-Event
+
+### React.js
+
+```javascript
+function MyItem({ item, handleDelete }) {
+  return <button onClick={() => handleDelete(item)}>{item.name}</button>;
+
+  /*
+   * Apply useCallback hook to prevent generate new function every rendering.
+   *
+   * const handleClick = useCallback(() => handleDelete(item), [item, handleDelete]);
+   *
+   * return <button onClick={handleClick}>{item.name}</button>;
+  */
+}
+
+...
+
+function App() {
+  const handleDelete = () => { ... }
+
+  return <MyItem item={...} handleDelete={handleDelete} />
+}
+
+```
+
+### Vue.js
+
+```html
+<template>
+  <button @click="deleteItem()">{{item.name}}</button>
+</template>
+<script>
+  export default {
+    name: "my-item",
+    props: {
+      item: Object,
+    },
+    methods: {
+      deleteItem() {
+        this.$emit("delete", this.item);
+      },
+    },
+  };
+</script>
+
+...
+
+<template>
+  <MyItem :item="item" @delete="handleDelete" />
+</template>
+<script>
+  export default {
+    components: {
+      MyItem,
+    },
+    methods: {
+      handleDelete(item) { ... }
+    },
+  };
+</script>
+```
+
 ## State
 
 ### React.js
@@ -144,7 +213,7 @@ class MyReactComponent extends React.Component {
 }
 ```
 
-#### Functional component
+#### Function component
 
 ```javascript
 function MyReactComponent() {
@@ -200,7 +269,7 @@ class MyReactComponent extends React.Component {
 }
 ```
 
-#### Functional component
+#### Function component
 
 ```javascript
 function MyReactComponent() {
@@ -342,7 +411,7 @@ class MyReactComponent extends React.Component {
 }
 ```
 
-#### Functional component
+#### Function component
 
 ```javascript
 function MyReactComponent() {
@@ -465,8 +534,9 @@ npx create-nuxt-app nuxt-template
 
 ## Reference
 
-- https://medium.com/myriatek/vue-and-react-side-by-side-55d02b9fb222
 - https://reactjs.org/docs/getting-started.html
 - https://nextjs.org/docs/getting-started
 - https://vuejs.org/v2/guide/#Getting-Started
 - https://nuxtjs.org/guide/installation
+- https://medium.com/myriatek/vue-and-react-side-by-side-55d02b9fb222
+- https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-2019-edition-42ba2cab9e56
