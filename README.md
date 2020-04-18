@@ -9,6 +9,7 @@ This cheat sheet is for someone who already familiar with React.js or Vue.js. It
 - [Change-State](#change-state)
 - [Conditional-Rendering](#conditional-rendering)
 - [List-Rendering](#list-rendering)
+- [Lifecycle](#lifecycle)
 
 ---
 
@@ -313,6 +314,74 @@ function MyReactComponent({ items }) {
     props: {
       items: Array,
     },
+  };
+</script>
+```
+
+# Lifecycle
+
+### React.js
+
+- http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+#### Class component
+
+```javascript
+class MyReactComponent extends React.Component {
+  static getDerivedStateFromProps(props, state) {}
+  componentDidMount() {}
+  shouldComponentUpdate(nextProps, nextState) {}
+  getSnapshotBeforeUpdate(prevProps, prevState) {}
+  componentDidUpdate(prevProps, prevState) {}
+  componentWillUnmount() {}
+
+  render() {
+    return <div>Hello World</div>;
+  }
+}
+```
+
+#### Functional component
+
+```javascript
+function MyReactComponent() {
+  // componentDidMount
+  useEffect(() => {}, []);
+
+
+  // componentDidUpdate + componentDidMount
+  useEffect(() => {});
+
+  // componentWillUnmount
+  useEffect(() => {
+    return () => {...}
+  }, []);
+
+  // runs synchronously after a render but before the screen is updated
+  useLayoutEffect(() => {}, []);
+
+  return <div>Hello World</div>;
+}
+```
+
+### Vue.js
+
+- https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram
+
+```html
+<template>
+  <div>Hello World</div>
+</template>
+<script>
+  export default {
+    beforeCreate() {},
+    created() {},
+    beforeMount() {},
+    mounted() {},
+    beforeUpdate() {},
+    updated() {},
+    beforeDestroy() {},
+    destroyed() {},
   };
 </script>
 ```
