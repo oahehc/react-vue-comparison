@@ -2,7 +2,17 @@
 
 This cheat sheet is for someone who already familiar with React.js or Vue.js. It can help us mapping the syntax into another framework.
 
-## Basic Component
+- [Basic-Component](#basic-component)
+- [Prop](#prop)
+- [Event-Binding](#event-binding)
+- [State](#state)
+- [Change-State](#change-state)
+- [Conditional-Rendering](#conditional-rendering)
+- [List-Rendering](#list-rendering)
+
+---
+
+## Basic-Component
 
 ### React.js
 
@@ -68,7 +78,7 @@ function MyReactComponent(props) {
 <MyVueComponent name="World" />
 ```
 
-## Event Binding
+## Event-Binding
 
 ### React.js
 
@@ -159,7 +169,7 @@ function MyReactComponent() {
 </script>
 ```
 
-### Change State
+## Change-State
 
 ### React.js
 
@@ -231,7 +241,7 @@ function MyReactComponent() {
 </script>
 ```
 
-## Conditional Rendering
+## Conditional-Rendering
 
 ### React.js
 
@@ -270,7 +280,7 @@ function MyReactComponent() {
 </script>
 ```
 
-## List Rendering
+## List-Rendering
 
 ### React.js
 
