@@ -32,6 +32,7 @@ And to find out the relative syntax in another framework.
   - [Layout](/SSR.md#layout)
   - [Error-Page](/SSR.md#error-page)
   - [Meta-Tag](/SSR.md#meta-tag)
+  - [Context](/SSR.md#context)
 - [CLI](/CLI.md)
 
 ---

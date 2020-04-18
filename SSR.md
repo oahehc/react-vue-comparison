@@ -105,6 +105,8 @@ function Home() {
 
 ### Next.js
 
+_getInitialProps can only be used in the default export of every page_
+
 #### < Next.js 9.3
 
 ##### class component
@@ -131,7 +133,7 @@ export default class Page extends React.Component {
 ```js
 import fetch from "isomorphic-unfetch";
 
-export default function Page({ data }) {
+function Page({ data }) {
   // Render data...
 }
 
@@ -285,6 +287,8 @@ export default Error;
 
 ## Meta-Tag
 
+### Next.js
+
 ```js
 import Head from "next/head";
 
@@ -330,6 +334,62 @@ function IndexPage() {
     },
   };
 </script>
+```
+
+## Context
+
+### Next.js
+
+_getInitialProps can only be used in the default export of every page_
+
+```js
+function Page({ data }) {
+  // Render data...
+}
+
+Page.getInitialProps = async (context) => {
+  const { pathname, query, asPath, req, res, err } = context;
+  // pathname - Current route. That is the path of the page in /pages
+  // query - Query string section of URL parsed as an object
+  // asPath - String of the actual path (including the query) shown in the browser
+  // req - HTTP request object (server only)
+  // res - HTTP response object (server only)
+  // err - Error object if any error is encountered during the rendering
+
+  return { props: { project: "next" } };
+};
+```
+
+### Nuxt.js
+
+```js
+export default {
+  asyncData(context) {
+    // Universal keys
+    const {
+      app,
+      store,
+      route,
+      params,
+      query,
+      env,
+      isDev,
+      isHMR,
+      redirect,
+      error,
+    } = context;
+    // Server-side
+    if (process.server) {
+      const { req, res, beforeNuxtRender } = context;
+    }
+    // Client-side
+    if (process.client) {
+      const { from, nuxtState } = context;
+    }
+
+    return { project: "nuxt" };
+  },
+};
 ```
 
 ---
