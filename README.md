@@ -2,6 +2,7 @@
 
 This cheat sheet is for someone who already familiar with React.js or Vue.js. It can help us mapping the syntax into another framework.
 
+- [Render](#render)
 - [Basic-Component](#basic-component)
 - [Prop](#prop)
 - [Event-Binding](#event-binding)
@@ -17,6 +18,22 @@ This cheat sheet is for someone who already familiar with React.js or Vue.js. It
 - [Error-Handling](#error-handling)
 
 ---
+
+## Render
+
+### React.js
+
+```javascript
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+### Vue.js
+
+```javascript
+new Vue({
+  render: (h) => h(App),
+}).$mount("#root");
+```
 
 ## Basic-Component
 
