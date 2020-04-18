@@ -24,6 +24,9 @@ This cheat sheet is for someone who already familiar with React.js or Vue.js. It
   - [Performance-Optimization](#performance-optimization)
 - Next.js vs Nuxt.js
   - [Assets](#assets)
+  - [Basic-Routes](#basic-routes)
+  - [Dynamic-Routes](#dynamic-routes)
+  - [Link](#link)
 - [CLI-Tools](#cli-tools)
 
 ---
@@ -985,8 +988,6 @@ function MyItem({ item, handleDelete }) {
 
 ---
 
-TODO:
-
 ## Assets
 
 ### Next.js
@@ -1010,7 +1011,7 @@ _By default, Nuxt uses vue-loader, file-loader and url-loader for strong assets 
 ```html
 <!--
 |- assets/
-|-- image.png
+  |- image.png
 -->
 <img src="~/assets/image.png" alt="image" />
 ```
@@ -1022,9 +1023,70 @@ _automatically served_
 ```html
 <!--
 |- static/
-|-- image.png
+  |- image.png
 -->
 <img src="/image.png" alt="image" />
+```
+
+## Basic-Routes
+
+### Next.js
+
+```
+|- pages/
+  |- index.js        → href="/"
+  |- blog/index.js   → href="/blog"
+```
+
+### Nuxt.js
+
+```
+|- pages/
+  |- index.vue       → href="/"
+  |- blog/index.vue  → href="/blog"
+```
+
+## Dynamic-Routes
+
+### Next.js
+
+```
+|- pages/
+  |- blog/[slug].js           → href="/blog/:slug" (eg. /blog/hello-world)
+  |- [username]/[option].js   → href="/:username/:option" (eg. /foo/settings)
+  |- post/[...all].js         → href="/post/*" (eg. /post/2020/id/title)
+```
+
+### Nuxt.js
+
+```
+|- pages/
+  |- blog/[slug].vue         → href="/blog/:slug" (eg. /blog/hello-world)
+  |- _username/_option.vue   → href="/:username/:option" (eg. /foo/settings)
+```
+
+## Link
+
+### Next.js
+
+```js
+import Link from "next/link";
+
+function Home() {
+  return (
+    <Link href="/">
+      <a>Home</a>
+    </Link>
+  );
+}
+```
+
+### Nuxt.js
+
+```html
+<template>
+  <nuxt-link to="/">Home page</nuxt-link>
+</template>
 ```
 
 ---
