@@ -13,6 +13,7 @@ This cheat sheet is for someone who already familiar with React.js or Vue.js. It
 - [Compute](#compute)
 - [Watch](#watch)
 - [Children-and-Slot](#children-and-slot)
+- [Render-HTML](#render-html)
 - [Conditional-Rendering](#conditional-rendering)
 - [List-Rendering](#list-rendering)
 - [Render-Props](#render-props)
@@ -515,6 +516,33 @@ function MyReactComponent({ children }) {
 ...
 
 <MyVueComponent>Hello World</MyVueComponent>
+```
+
+## Render-HTML
+
+### React.js
+
+```javascript
+function MyReactComponent() {
+  return <div dangerouslySetInnerHTML={{ __html: "<pre>...</pre>" }} />;
+}
+```
+
+### Vue.js
+
+```html
+<template>
+  <div v-html="html"></div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      html: "<pre>...</pre>"
+    }
+  },
+};
+</script>
 ```
 
 ## Conditional-Rendering
