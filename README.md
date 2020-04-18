@@ -8,6 +8,7 @@ This cheat sheet is for someone who already familiar with React.js or Vue.js. It
 - [Custom-Event](#custom-event)
 - [State](#state)
 - [Change-State](#change-state)
+- [Two-Way-Binding](#two-way-binding)
 - [Conditional-Rendering](#conditional-rendering)
 - [List-Rendering](#list-rendering)
 - [Lifecycle](#lifecycle)
@@ -307,6 +308,41 @@ function MyReactComponent() {
       increaseCount() {
         this.count = this.count + 1;
       },
+    },
+  };
+</script>
+```
+
+## Two-Way-Binding
+
+### React.js
+
+_React didn't have two-way binding, so we need to handle the data flow on our own_
+
+```javascript
+function MyReactComponent() {
+  const [content, setContent] = useState("");
+
+  return (
+    <input
+      type="text"
+      value={content}
+      onChange={(e) => setContent(e.target.value)}
+    />
+  );
+}
+```
+
+### Vue.js
+
+```html
+<template>
+  <input type="text" v-model="content" />
+</template>
+<script>
+  export default {
+    data() {
+      return { content: "" };
     },
   };
 </script>
