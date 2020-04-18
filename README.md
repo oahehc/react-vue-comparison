@@ -28,6 +28,8 @@ And to find out the relative syntax in another framework.
   - [Basic-Routes](/ssr#basic-routes)
   - [Dynamic-Routes](/ssr#dynamic-routes)
   - [Link](/ssr#link)
+  - [Fetch-On-Server](/ssr#fetch-on-server)
+  - [Layout](/ssr#layout)
 - [CLI](/cli)
 
 ---
