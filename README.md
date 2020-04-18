@@ -2,12 +2,6 @@
 
 ---
 
-## Cli
-
-```
-
-```
-
 ## Basic Component
 
 ### React.js
@@ -25,9 +19,9 @@ class ComponentName extends React.Component {
 #### Functional component
 
 ```javascript
-const ComponentName = () => {
+function ComponentName() {
   return <h1>My Component</h1>;
-};
+}
 ```
 
 ### Vue.js
@@ -36,6 +30,39 @@ const ComponentName = () => {
 Vue.component("component-name", {
   template: "<h1>My Component</h1>",
 });
+```
+
+---
+
+## CLI tools
+
+### React.js: create-react-app
+
+```zsh
+# https://create-react-app.dev/docs/getting-started/
+npx create-react-app react-template
+```
+
+### Next.js: create-next-app
+
+```zsh
+# https://nextjs.org/blog/create-next-app
+npx create-next-app next-template
+```
+
+### Vue.js: vue-cli
+
+```zsh
+# https://cli.vuejs.org/
+yarn global add @vue/cli
+vue create vue-template
+```
+
+### Nuxt.js: create-nuxt-app
+
+```zsh
+# https://github.com/nuxt/create-nuxt-app
+npx create-nuxt-app nuxt-template
 ```
 
 ---
