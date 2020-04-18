@@ -12,8 +12,10 @@ This cheat sheet is for someone who already familiar with React.js or Vue.js. It
 - [Two-Way-Binding(Vue.js only)](#two-way-binding)
 - [Compute](#compute)
 - [Watch](#watch)
+- [Children-and-Slot](#children-and-slot)
 - [Conditional-Rendering](#conditional-rendering)
 - [List-Rendering](#list-rendering)
+- [Render-Props](#render-props)
 - [Lifecycle](#lifecycle)
 - [Error-Handling](#error-handling)
 - [Performance-Optimization](#performance-optimization)
@@ -482,6 +484,39 @@ function MyReactComponent() {
 </script>
 ```
 
+## Children-and-Slot
+
+### React.js
+
+```javascript
+function MyReactComponent({ children }) {
+  return <div>{children}</div>;
+}
+
+...
+
+<MyReactComponent>Hello World</MyReactComponent>
+```
+
+### Vue.js
+
+```html
+<template>
+  <div>
+    <slot />
+  </div>
+</template>
+<script>
+  export default {
+    name: "my-vue-component",
+  };
+</script>
+
+...
+
+<MyVueComponent>Hello World</MyVueComponent>
+```
+
 ## Conditional-Rendering
 
 ### React.js
@@ -558,7 +593,82 @@ function MyReactComponent({ items }) {
 </script>
 ```
 
-# Lifecycle
+## Render-Props
+
+### React.js
+
+```javascript
+function Modal({children, isOpen}) {
+  const [isModalOpen, toggleModalOpen] = useState(isOpen);
+
+  return (
+    <div className={isModalOpen ? 'open' : 'close'}>
+      {type children === 'function' ? children(toggleModalOpen) : children}
+    </div>)
+  ;
+}
+
+Modal.propTypes = {
+  isOpen: PropTypes.bool,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+}
+Modal.defaultProps = {
+  isOpen: false,
+}
+
+...
+
+<Modal isOpen>
+  {(toggleModalOpen) => {
+    <div>
+      <div>...</div>
+      <button onClick={() => toggleModalOpen(false)}>Cancel</button>
+    </div>
+  }}
+</Modal>
+```
+
+### Vue.js (slot)
+
+```html
+<template>
+  <div v-show="isModalOpen">
+    <slot v-bind:toggleModal="toggleModalOpen" />
+  </div>
+</template>
+<script>
+  export default {
+    name: "modal",
+    props: {
+      isOpen: {
+        type: Boolean,
+        default: false,
+      },
+    },
+    data() {
+      return {
+        isModalOpen: this.isOpen,
+      };
+    },
+    methods: {
+      toggleModalOpen(state) {
+        this.isModalOpen = state;
+      },
+    },
+  };
+</script>
+
+...
+
+<Modal isOpen>
+  <template v-slot="slotProps">
+    <div>...</div>
+    <button @click="slotProps.toggleModal(false)">Close</button>
+  </template>
+</Modal>
+```
+
+## Lifecycle
 
 ### React.js
 
