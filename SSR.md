@@ -100,3 +100,10 @@ function Home() {
   <nuxt-link to="/">Home page</nuxt-link>
 </template>
 ```
+
+---
+
+## Reference
+
+- https://nextjs.org/docs/getting-started
+- https://nuxtjs.org/guide/installation
