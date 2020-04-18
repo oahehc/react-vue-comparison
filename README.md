@@ -8,7 +8,9 @@ This cheat sheet is for someone who already familiar with React.js or Vue.js. It
 - [Custom-Event](#custom-event)
 - [State](#state)
 - [Change-State](#change-state)
-- [Two-Way-Binding](#two-way-binding)
+- [Two-Way-Binding(Vue.js only)](#two-way-binding)
+- [Compute](#compute)
+- [Watch](#watch)
 - [Conditional-Rendering](#conditional-rendering)
 - [List-Rendering](#list-rendering)
 - [Lifecycle](#lifecycle)
@@ -276,10 +278,10 @@ class MyReactComponent extends React.Component {
 function MyReactComponent() {
   const [count, setCount] = useState(0);
 
-  function increaseCount() {
+  const increaseCount = () => {
     setCount(count + 1);
     // setCount(currentCount => currentCount + 1);
-  }
+  };
 
   return (
     <div>
@@ -343,6 +345,105 @@ function MyReactComponent() {
   export default {
     data() {
       return { content: "" };
+    },
+  };
+</script>
+```
+
+## Compute
+
+### React.js
+
+_React.js don't have `compute` property, but we can achieve this through react hook easily_
+
+```javascript
+function DisplayName({ firstName, lastName }) {
+  const displayName = useMemo(() => {
+    return `${firstName} ${lastName}`;
+  }, [firstName, lastName]);
+
+  return <div>{displayName}</div>;
+}
+
+...
+
+<DisplayName firstName="Hello" lastName="World" />
+```
+
+### Vue.js
+
+```html
+<template>
+  <div>{{displayName}}</div>
+</template>
+<script>
+  export default {
+    name: "display-name",
+    props: {
+      firstName: String,
+      lastName: String,
+    },
+    computed: {
+      displayName: function () {
+        return `${this.firstName} ${this.lastName}`;
+      },
+    },
+  };
+</script>
+
+...
+
+<DisplayName firstName="Hello" lastName="World" />
+```
+
+## Watch
+
+_React.js don't have `watch` property, but we can achieve this through react hook easily_
+
+```javascript
+function MyReactComponent() {
+  const [count, setCount] = useState(0);
+
+  const increaseCount = () => {
+    setCount((currentCount) => currentCount + 1);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("my_count", newCount);
+  }, [count]);
+
+  return (
+    <div>
+      <span>{count}</span>
+      <button onClick={increaseCount}>Add</button>
+    </div>
+  );
+}
+```
+
+### Vue.js
+
+```html
+<template>
+  <div>
+    <span>{{count}}</span>
+    <button @click="increaseCount()">Add</button>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return { count: 0 };
+    },
+    methods: {
+      increaseCount() {
+        this.count = this.count + 1;
+      },
+    },
+    watch: {
+      count: function (newCount, oldCount) {
+        localStorage.setItem("my_count", newCount);
+      },
     },
   };
 </script>
