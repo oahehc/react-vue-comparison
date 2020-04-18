@@ -19,6 +19,7 @@ This cheat sheet is for someone who already familiar with React.js or Vue.js. It
 - [Render-Props](#render-props)
 - [Lifecycle](#lifecycle)
 - [Error-Handling](#error-handling)
+- [Ref](#ref)
 - [Performance-Optimization](#performance-optimization)
 
 ---
@@ -535,13 +536,13 @@ function MyReactComponent() {
   <div v-html="html"></div>
 </template>
 <script>
-export default {
-  data() {
-    return {
-      html: "<pre>...</pre>"
-    }
-  },
-};
+  export default {
+    data() {
+      return {
+        html: "<pre>...</pre>",
+      };
+    },
+  };
 </script>
 ```
 
@@ -803,6 +804,87 @@ const vm = new Vue({
     error = err.toString();
   }
 }
+```
+
+## Ref
+
+### React.js
+
+#### Class component
+
+```javascript
+class AutofocusInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.ref = React.createRef();
+  }
+
+  state = {
+    content: "",
+  };
+
+  componentDidMount() {
+    this.ref.current.focus();
+  }
+
+  setContent = (e) => {
+    this.setState({ content: e.target.value });
+  };
+
+  render() {
+    return (
+      <input
+        ref={this.ref}
+        type="text"
+        value={this.state.content}
+        onChange={this.setContent}
+      />
+    );
+  }
+}
+```
+
+#### Function component
+
+```javascript
+function AutofocusInput() {
+  const [content, setContent] = useState("");
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (ref && ref.current) {
+      ref.current.focus();
+    }
+  }, []);
+
+  return (
+    <input
+      ref={ref}
+      type="text"
+      value={content}
+      onChange={(e) => setContent(e.target.value)}
+    />
+  );
+}
+```
+
+### Vue.js
+
+```html
+<template>
+  <input ref="input" type="text" v-model="content" />
+</template>
+<script>
+  export default {
+    name: "autofocus-input",
+    data() {
+      return { content: "" };
+    },
+    mounted() {
+      this.$refs.input.focus();
+    },
+  };
+</script>
 ```
 
 ## Performance-Optimization
