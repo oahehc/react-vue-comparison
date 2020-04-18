@@ -16,6 +16,7 @@ This cheat sheet is for someone who already familiar with React.js or Vue.js. It
 - [List-Rendering](#list-rendering)
 - [Lifecycle](#lifecycle)
 - [Error-Handling](#error-handling)
+- [Performance-Optimization](#performance-optimization)
 
 ---
 
@@ -59,10 +60,15 @@ function MyReactComponent() {
 
 ### Vue.js
 
-```javascript
-Vue.component("my-vue-component", {
-  template: "<h1>Hello world</h1>",
-});
+```html
+<template>
+  <h1>Hello World</h1>
+</template>
+<script>
+  export default {
+    name: "MyVueComponent",
+  };
+</script>
 ```
 
 ## Prop
@@ -661,6 +667,98 @@ const vm = new Vue({
 }
 ```
 
+## Performance-Optimization
+
+### React.js
+
+#### PureComponent
+
+```javascript
+class MyReactComponent extends React.PureComponent {
+  ...
+}
+```
+
+#### shouldComponentUpdate
+
+```javascript
+class MyReactComponent extends React.Component {
+  shouldComponentUpdate(nextProps) {...}
+
+  ...
+}
+```
+
+### React.memo
+
+```javascript
+export default React.memo(
+  MyReactComponent,
+  (prevProps, nextProps) => {
+    ...
+  }
+);
+```
+
+### useMemo
+
+```javascript
+export default function MyReactComponent() {
+  return React.useMemo(() => {
+    return <div>...</div>;
+  }, []);
+}
+```
+
+### useCallback
+
+```javascript
+function MyItem({ item, handleDelete }) {
+  const handleClick = useCallback(() => handleDelete(item), [
+    item,
+    handleDelete,
+  ]);
+
+  return <button onClick={handleClick}>{item.name}</button>;
+}
+```
+
+### Vue.js
+
+#### v:once
+
+```html
+<span v-once>This will never change: {{msg}}</span>
+```
+
+#### functional component
+
+- https://vuejs.org/v2/guide/render-function.html#Functional-Components
+
+```html
+<template functional>
+  <h1>Hello {{ name }}</h1>
+</template>
+<script>
+  export default {
+    name: "MyVueComponent",
+    props: {
+      name: String,
+    },
+  };
+</script>
+```
+
+#### keep-alive component
+
+- https://vuejs.org/v2/api/#keep-alives
+
+```html
+<keep-alive>
+  <component :is="view"></component>
+</keep-alive>
+```
+
 ---
 
 ## CLI tools
@@ -704,3 +802,5 @@ npx create-nuxt-app nuxt-template
 - https://nuxtjs.org/guide/installation
 - https://medium.com/myriatek/vue-and-react-side-by-side-55d02b9fb222
 - https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-2019-edition-42ba2cab9e56
+- https://dev.to/oahehc/few-tips-to-optimizing-performance-of-react-project-5h25
+- https://dev.to/veebuv/5-extremely-easy-ways-to-drastically-improve-your-vuejs-app-s-speed-5k0
