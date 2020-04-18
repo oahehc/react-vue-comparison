@@ -31,6 +31,7 @@ And to find out the relative syntax in another framework.
   - [Fetch-On-Server](/SSR.md#fetch-on-server)
   - [Layout](/SSR.md#layout)
   - [Error-Page](/SSR.md#error-page)
+  - [Meta-Tag](/SSR.md#meta-tag)
 - [CLI](/CLI.md)
 
 ---

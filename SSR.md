@@ -283,6 +283,55 @@ export default Error;
 </script>
 ```
 
+## Meta-Tag
+
+```js
+import Head from "next/head";
+
+function IndexPage() {
+  return (
+    <div>
+      <Head>
+        <title>My page title</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <p>Hello world!</p>
+    </div>
+  );
+}
+```
+
+### Nuxt.js
+
+```html
+<template>
+  <h1>{{ title }}</h1>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        title: "Hello World!",
+      };
+    },
+    head() {
+      return {
+        title: this.title,
+        meta: [
+          // To avoid duplicated meta tags when used in child component, set up an unique identifier with the hid key
+          {
+            hid: "description",
+            name: "description",
+            content: "My custom description",
+          },
+        ],
+      };
+    },
+  };
+</script>
+```
+
 ---
 
 ## Reference
