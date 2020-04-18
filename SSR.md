@@ -237,6 +237,52 @@ export default function MyApp({ Component, pageProps }) {
 </script>
 ```
 
+## Error-Page
+
+### Next.js
+
+`pages/_error.js`
+
+```js
+function Error({ statusCode }) {
+  return (
+    <p>
+      {statusCode
+        ? `An error ${statusCode} occurred on server`
+        : "An error occurred on client"}
+    </p>
+  );
+}
+
+Error.getInitialProps = ({ res, err }) => {
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+  return { statusCode };
+};
+
+export default Error;
+```
+
+### Nuxt.js
+
+`layouts/error.vue`
+
+```html
+<template>
+  <div class="container">
+    <h1 v-if="error.statusCode === 404">Page not found</h1>
+    <h1 v-else>An error occurred</h1>
+    <nuxt-link to="/">Home page</nuxt-link>
+  </div>
+</template>
+
+<script>
+  export default {
+    props: ["error"],
+    layout: "blog", // you can set a custom layout for the error page
+  };
+</script>
+```
+
 ---
 
 ## Reference
