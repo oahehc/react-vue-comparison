@@ -10,6 +10,7 @@ This cheat sheet is for someone who already familiar with React.js or Vue.js. It
 - [Conditional-Rendering](#conditional-rendering)
 - [List-Rendering](#list-rendering)
 - [Lifecycle](#lifecycle)
+- [Error-Handling](#error-handling)
 
 ---
 
@@ -384,6 +385,47 @@ function MyReactComponent() {
     destroyed() {},
   };
 </script>
+```
+
+## Error-Handling
+
+### React.js
+
+```javascript
+class ErrorBoundary extends React.Component {
+  state = { hasError: false };
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {}
+
+  render() {
+    if (this.state.hasError) return <h1>Something went wrong.</h1>;
+    return this.props.children;
+  }
+}
+
+...
+
+<ErrorBoundary>
+  <App />
+</ErrorBoundary>
+```
+
+### Vue.js
+
+```javascript
+const vm = new Vue({
+  data: {
+    error: "",
+  },
+  errorCaptured: function(err, component, details) {
+    error = err.toString();
+  }
+}
 ```
 
 ---
