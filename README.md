@@ -2,25 +2,29 @@
 
 This cheat sheet is for someone who already familiar with React.js or Vue.js. It can help us mapping the syntax into another framework.
 
-- [Render](#render)
-- [Basic-Component](#basic-component)
-- [Prop](#prop)
-- [Event-Binding](#event-binding)
-- [Custom-Event](#custom-event)
-- [State](#state)
-- [Change-State](#change-state)
-- [Two-Way-Binding(Vue.js only)](#two-way-binding)
-- [Compute](#compute)
-- [Watch](#watch)
-- [Children-and-Slot](#children-and-slot)
-- [Render-HTML](#render-html)
-- [Conditional-Rendering](#conditional-rendering)
-- [List-Rendering](#list-rendering)
-- [Render-Props](#render-props)
-- [Lifecycle](#lifecycle)
-- [Error-Handling](#error-handling)
-- [Ref](#ref)
-- [Performance-Optimization](#performance-optimization)
+- React.js vs Vue.js
+  - [Render](#render)
+  - [Basic-Component](#basic-component)
+  - [Prop](#prop)
+  - [Event-Binding](#event-binding)
+  - [Custom-Event](#custom-event)
+  - [State](#state)
+  - [Change-State](#change-state)
+  - [Two-Way-Binding(Vue.js only)](#two-way-binding)
+  - [Compute](#compute)
+  - [Watch](#watch)
+  - [Children-and-Slot](#children-and-slot)
+  - [Render-HTML](#render-html)
+  - [Conditional-Rendering](#conditional-rendering)
+  - [List-Rendering](#list-rendering)
+  - [Render-Props](#render-props)
+  - [Lifecycle](#lifecycle)
+  - [Error-Handling](#error-handling)
+  - [Ref](#ref)
+  - [Performance-Optimization](#performance-optimization)
+- Next.js vs Nuxt.js
+  - [Assets](#assets)
+- [CLI-Tools](#cli-tools)
 
 ---
 
@@ -981,7 +985,51 @@ function MyItem({ item, handleDelete }) {
 
 ---
 
-## CLI tools
+TODO:
+
+## Assets
+
+### Next.js
+
+```js
+/*
+|- public/
+|-- my-image.png
+*/
+function MyImage() {
+  return <img src="/my-image.png" alt="my image" />;
+}
+```
+
+### Nuxt.js
+
+#### assets
+
+_By default, Nuxt uses vue-loader, file-loader and url-loader for strong assets serving._
+
+```html
+<!--
+|- assets/
+|-- image.png
+-->
+<img src="~/assets/image.png" alt="image" />
+```
+
+#### static
+
+_automatically served_
+
+```html
+<!--
+|- static/
+|-- image.png
+-->
+<img src="/image.png" alt="image" />
+```
+
+---
+
+## CLI-Tools
 
 ### React.js: create-react-app
 
