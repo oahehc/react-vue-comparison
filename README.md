@@ -2,11 +2,17 @@
 
 ---
 
-```javascript
-Vue.component("component-name", {
-  template: "<h1>My Component</h1>",
-});
+## Cli
+
 ```
+
+```
+
+## Basic Component
+
+### React.js
+
+#### Class component
 
 ```javascript
 class ComponentName extends React.Component {
@@ -16,36 +22,22 @@ class ComponentName extends React.Component {
 }
 ```
 
-<style>
-  th {
-    text-align: left;
-  }
-  td {
-    vertical-align: text-top;
-  }
-</style>
-<table valign="top">
-  <tr>
-    <th>React.js</th>
-    <th>Vue.js</th>
-  </tr>
-  <tr>
-    <td>
-      <pre>
-class ComponentName extends React.Component{
-  render(){
-    return (<span>My Component</span>);
-  }
-}</pre>
-    </td>
-    <td>
-      <pre>
-Vue.component('component-name', {
-  template: '<span>My Component</span>'
-});</pre>
-    </td>
-  </tr>
-</table>
+#### Functional component
+
+```javascript
+const ComponentName = () => {
+  return <h1>My Component</h1>;
+};
+```
+
+### Vue.js
+
+```javascript
+Vue.component("component-name", {
+  template: "<h1>My Component</h1>",
+});
+```
+
 ---
 
 ## Reference
