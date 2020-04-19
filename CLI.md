@@ -29,7 +29,7 @@ npx create-nuxt-app nuxt-template
 
 ## Reference
 
-- https://create-react-app.dev/docs/getting-started/
-- https://nextjs.org/blog/create-next-app
-- https://cli.vuejs.org/
-- https://github.com/nuxt/create-nuxt-app
+- [create-react-app](https://create-react-app.dev/docs/getting-started/)
+- [create-next-app](https://nextjs.org/blog/create-next-app)
+- [vue-cli](https://cli.vuejs.org/)
+- [create-nuxt-app](https://github.com/nuxt/create-nuxt-app)

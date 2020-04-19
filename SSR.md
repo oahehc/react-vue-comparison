@@ -396,5 +396,5 @@ export default {
 
 ## Reference
 
-- https://nextjs.org/docs/getting-started
-- https://nuxtjs.org/guide/installation
+- [Next.js](https://nextjs.org/docs/getting-started)
+- [Nuxt.js](https://nuxtjs.org/guide/installation)

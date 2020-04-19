@@ -1,7 +1,6 @@
 # React-Vue-Comparison
 
-This cheat sheet is for someone who already familiar with React.js or Vue.js.  
-And to find out the relative syntax in another framework.
+This repo is for someone who already familiar with React.js or Vue.js, and wants to find out the relative syntax in another framework.
 
 - [React.js vs Vue.js](/CORE.md)
   - [Render](/CORE.md#render)
@@ -33,7 +32,8 @@ And to find out the relative syntax in another framework.
   - [Error-Page](/SSR.md#error-page)
   - [Meta-Tag](/SSR.md#meta-tag)
   - [Context](/SSR.md#context)
-- [CLI](/CLI.md)
+- Tools
+  - [CLI](/CLI.md)
 
 ---
 

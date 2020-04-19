@@ -959,9 +959,9 @@ function MyItem({ item, handleDelete }) {
 
 ## Reference
 
-- https://reactjs.org/docs/getting-started.html
-- https://vuejs.org/v2/guide/#Getting-Started
-- https://medium.com/myriatek/vue-and-react-side-by-side-55d02b9fb222
-- https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-2019-edition-42ba2cab9e56
-- https://dev.to/oahehc/few-tips-to-optimizing-performance-of-react-project-5h25
-- https://dev.to/veebuv/5-extremely-easy-ways-to-drastically-improve-your-vuejs-app-s-speed-5k0
+- [React.js](https://reactjs.org/docs/getting-started.html)
+- [Vue.js](https://vuejs.org/v2/guide/#Getting-Started)
+- [Vue and React Side by Side](https://medium.com/myriatek/vue-and-react-side-by-side-55d02b9fb222)
+- [I created the exact same app in React and Vue. Here are the differences](https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-2019-edition-42ba2cab9e56)
+- [Few Tips to Optimizing Performance of React Project](https://dev.to/oahehc/few-tips-to-optimizing-performance-of-react-project-5h25)
+- [5 Extremely Easy ways to drastically improve your VueJS app’s speed](https://dev.to/veebuv/5-extremely-easy-ways-to-drastically-improve-your-vuejs-app-s-speed-5k0)
