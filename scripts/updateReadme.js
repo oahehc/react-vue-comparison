@@ -104,7 +104,7 @@ function generateTable(reactInfo, vueInfo, nextInfo, nuxtInfo) {
   return [
     {
       table: {
-        headers: ['', 'STAR', 'LATEST VERSION', 'OPEN ISSUES', 'WEEKLY DOWNLOADS'],
+        headers: ['', 'STAR', 'LATEST VERSION', 'OPEN ISSUES & PR', 'WEEKLY DOWNLOADS'],
         aligns: ['left', 'right', 'center', 'right', 'right'],
         rows: [
           [
@@ -129,7 +129,7 @@ function generateTable(reactInfo, vueInfo, nextInfo, nuxtInfo) {
             nextInfo.wkDownload,
           ],
           [
-            'Vue - [npm](https://www.npmjs.com/package/vue), [github](https://github.com/vuejs/vue), [doc](https://vuejs.org/v2/guide/l)',
+            'Nuxt.js - [npm](https://www.npmjs.com/package/nuxt), [github](https://github.com/nuxt/nuxt.js), [doc](https://nuxtjs.org/guide)',
             nuxtInfo.stars,
             nuxtInfo.version,
             nuxtInfo.issues,
@@ -162,9 +162,10 @@ function generateMD(table) {
     const results = await Promise.all(requests);
     results.forEach(({ data }) => {
       if (data && data.items && data.items[0]) {
-        const { name, stargazers_count } = data.items[0];
+        const { name, stargazers_count, open_issues_count } = data.items[0];
         if (name && output[name]) {
           output[name].stars = Number(stargazers_count).toLocaleString();
+          output[name].issues = Number(open_issues_count).toLocaleString();
         }
       }
     });
@@ -178,7 +179,6 @@ function generateMD(table) {
     const page = await browser.newPage();
     for (let repo of repos) {
       await page.goto(repo.npmUrl);
-      await page.waitFor(2000);
 
       const info = await page.evaluate(() => {
         const wkDownload =
@@ -187,13 +187,12 @@ function generateMD(table) {
           (document.querySelector('p.truncate+div+div p') &&
             document.querySelector('p.truncate+div+div p').textContent) ||
           '?';
-        const issues =
-          (document.querySelector('p.f4 > a.truncate') && document.querySelector('p.f4 > a.truncate').textContent) ||
-          '?';
+        // const issues =
+        //   (document.querySelector('p.f4 > a.truncate') && document.querySelector('p.f4 > a.truncate').textContent) ||
+        //   '?';
         return {
           wkDownload,
           version,
-          issues,
         };
       });
 
