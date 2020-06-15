@@ -5,10 +5,12 @@ This repo is for someone who already familiar with React.js or Vue.js, and wants
 
  |  | STAR | LATEST VERSION | OPEN ISSUES & PR | WEEKLY DOWNLOADS | 
  | :--- | ---: | :---: | ---: | ---: | 
- | React - [npm](https://www.npmjs.com/package/react), [github](https://github.com/facebook/react), [doc](https://reactjs.org/docs/getting-started.html) | 150,475 | 16.13.1 | 630 | 7,717,175
-Vue - [npm](https://www.npmjs.com/package/vue), [github](https://github.com/vuejs/vue), [doc](https://vuejs.org/v2/guide/l) | 165,989 | 2.6.11 | 516 | 1,590,712
-Next.js - [npm](https://www.npmjs.com/package/next), [github](https://github.com/vercel/next.js), [doc](https://nextjs.org/docs/getting-started) | 49,635 | 9.4.4 | 530 | 573,316
-Nuxt.js - [npm](https://www.npmjs.com/package/nuxt), [github](https://github.com/nuxt/nuxt.js), [doc](https://nuxtjs.org/guide) | 27,717 | 2.12.2 | 319 | 208,901 | 
+ | React - [npm](https://www.npmjs.com/package/react), [github](https://github.com/facebook/react), [doc](https://reactjs.org/docs/getting-started.html) | 150,489 | 16.13.1 | 632 | 7,717,175
+Vue - [npm](https://www.npmjs.com/package/vue), [github](https://github.com/vuejs/vue), [doc](https://vuejs.org/v2/guide/l) | 166,010 | 2.6.11 | 515 | 1,590,712
+Next.js - [npm](https://www.npmjs.com/package/next), [github](https://github.com/vercel/next.js), [doc](https://nextjs.org/docs/getting-started) | 49,647 | 9.4.4 | 533 | 573,316
+Nuxt.js - [npm](https://www.npmjs.com/package/nuxt), [github](https://github.com/nuxt/nuxt.js), [doc](https://nuxtjs.org/guide) | 27,725 | 2.12.2 | 320 | 208,901
+React-Router - [npm](https://www.npmjs.com/package/react-router), [github](https://github.com/ReactTraining/react-router), [doc](https://reacttraining.com/react-router/web/guides/quick-start) | 40,833 | 5.2.0 | 56 | 3,660,884
+Vue-Router - [npm](https://www.npmjs.com/package/vue-router), [github](https://github.com/vuejs/vue-router), [doc](https://router.vuejs.org/guide) | 16,509 | 3.3.4 | 156 | 1,211,892 | 
 
 
 _Update: 2020/6/15_
@@ -59,6 +61,22 @@ _Update: 2020/6/15_
 
  - [CLI](/CLI.md)
 
+### [React-Router vs Vue-Router](/ROUTER.md)
+
+
+ - [Basic-Routing](/ROUTER.md#Basic-Routing)
+ - [Dynamic-Routing](/ROUTER.md#Dynamic-Routing)
+ - [Nested-Routing](/ROUTER.md#Nested-Routing)
+ - [Link](/ROUTER.md#Link)
+ - [NavLink](/ROUTER.md#NavLink)
+ - [Get-Location](/ROUTER.md#Get-Location)
+ - [Push](/ROUTER.md#Push)
+ - [Replace](/ROUTER.md#Replace)
+ - [Redirect](/ROUTER.md#Redirect)
+ - [Event](/ROUTER.md#Event)
+ - [Scroll](/ROUTER.md#Scroll)
+ - [Lazy-Loading-and-Code-Splitting](/ROUTER.md#Lazy-Loading-and-Code-Splitting)
+
 
 ---
 
@@ -67,5 +85,7 @@ _Update: 2020/6/15_
 
  - [React.js](https://reactjs.org/docs/getting-started.html)
  - [Next.js](https://nextjs.org/docs/getting-started)
+ - [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
  - [Vue.js](https://vuejs.org/v2/guide/#Getting-Started)
  - [Nuxt.js](https://nuxtjs.org/guide/installation)
+ - [Vue Router](https://router.vuejs.org/guide/)

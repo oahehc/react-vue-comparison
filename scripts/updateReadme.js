@@ -56,6 +56,23 @@ const contents = [
   {
     ul: ['[CLI](/CLI.md)'],
   },
+  { h3: '[React-Router vs Vue-Router](/ROUTER.md)' },
+  {
+    ul: [
+      '[Basic-Routing](/ROUTER.md#Basic-Routing)',
+      '[Dynamic-Routing](/ROUTER.md#Dynamic-Routing)',
+      '[Nested-Routing](/ROUTER.md#Nested-Routing)',
+      '[Link](/ROUTER.md#Link)',
+      '[NavLink](/ROUTER.md#NavLink)',
+      '[Get-Location](/ROUTER.md#Get-Location)',
+      '[Push](/ROUTER.md#Push)',
+      '[Replace](/ROUTER.md#Replace)',
+      '[Redirect](/ROUTER.md#Redirect)',
+      '[Event](/ROUTER.md#Event)',
+      '[Scroll](/ROUTER.md#Scroll)',
+      '[Lazy-Loading-and-Code-Splitting](/ROUTER.md#Lazy-Loading-and-Code-Splitting)',
+    ],
+  },
   { p: '---' },
 ];
 const reference = [
@@ -64,34 +81,58 @@ const reference = [
     ul: [
       '[React.js](https://reactjs.org/docs/getting-started.html)',
       '[Next.js](https://nextjs.org/docs/getting-started)',
+      '[React Router](https://reacttraining.com/react-router/web/guides/quick-start)',
       '[Vue.js](https://vuejs.org/v2/guide/#Getting-Started)',
       '[Nuxt.js](https://nuxtjs.org/guide/installation)',
+      '[Vue Router](https://router.vuejs.org/guide/)',
     ],
   },
 ];
 
-const repos = [
-  {
-    name: 'react',
+const repos = {
+  react: {
+    name: 'React',
     ghApi: 'https://api.github.com/search/repositories?q=react+in:name+user:facebook',
     npmUrl: 'https://www.npmjs.com/package/react',
+    ghUrl: 'https://github.com/facebook/react',
+    doc: 'https://reactjs.org/docs/getting-started.html',
   },
-  {
-    name: 'vue',
+  vue: {
+    name: 'Vue',
     ghApi: 'https://api.github.com/search/repositories?q=vue+in:name+user:vuejs',
     npmUrl: 'https://www.npmjs.com/package/vue',
+    ghUrl: 'https://github.com/vuejs/vue',
+    doc: 'https://vuejs.org/v2/guide/l',
   },
-  {
-    name: 'next.js',
+  'next.js': {
+    name: 'Next.js',
     ghApi: 'https://api.github.com/search/repositories?q=next+in:name+user:vercel',
     npmUrl: 'https://www.npmjs.com/package/next',
+    ghUrl: 'https://github.com/vercel/next.js',
+    doc: 'https://nextjs.org/docs/getting-started',
   },
-  {
-    name: 'nuxt.js',
+  'nuxt.js': {
+    name: 'Nuxt.js',
     ghApi: 'https://api.github.com/search/repositories?q=nuxt+in:name+user:nuxt',
     npmUrl: 'https://www.npmjs.com/package/nuxt',
+    ghUrl: 'https://github.com/nuxt/nuxt.js',
+    doc: 'https://nuxtjs.org/guide',
   },
-];
+  'react-router': {
+    name: 'React-Router',
+    ghApi: 'https://api.github.com/search/repositories?q=react-router+in:name+user:ReactTraining',
+    npmUrl: 'https://www.npmjs.com/package/react-router',
+    ghUrl: 'https://github.com/ReactTraining/react-router',
+    doc: 'https://reacttraining.com/react-router/web/guides/quick-start',
+  },
+  'vue-router': {
+    name: 'Vue-Router',
+    ghApi: 'https://api.github.com/search/repositories?q=vue-router+in:name+user:vuejs',
+    npmUrl: 'https://www.npmjs.com/package/vue-router',
+    ghUrl: 'https://github.com/vuejs/vue-router',
+    doc: 'https://router.vuejs.org/guide',
+  },
+};
 
 function getToday() {
   const now = new Date();
@@ -100,40 +141,36 @@ function getToday() {
 function logger(...args) {
   console.log(`[${new Date().toISOString()}] `, ...args);
 }
-function generateTable(reactInfo, vueInfo, nextInfo, nuxtInfo) {
+function getRowTitle(key) {
+  if (!repos[key]) return '';
+
+  const info = repos[key];
+  return `${info.name} - [npm](${info.npmUrl}), [github](${info.ghUrl}), [doc](${info.doc})`;
+}
+function generateTable(reactInfo, vueInfo, nextInfo, nuxtInfo, reactRouterInfo, vueRouterInfo) {
   return [
     {
       table: {
         headers: ['', 'STAR', 'LATEST VERSION', 'OPEN ISSUES & PR', 'WEEKLY DOWNLOADS'],
         aligns: ['left', 'right', 'center', 'right', 'right'],
         rows: [
+          [getRowTitle('react'), reactInfo.stars, reactInfo.version, reactInfo.issues, reactInfo.wkDownload],
+          [getRowTitle('vue'), vueInfo.stars, vueInfo.version, vueInfo.issues, vueInfo.wkDownload],
+          [getRowTitle('next.js'), nextInfo.stars, nextInfo.version, nextInfo.issues, nextInfo.wkDownload],
+          [getRowTitle('nuxt.js'), nuxtInfo.stars, nuxtInfo.version, nuxtInfo.issues, nuxtInfo.wkDownload],
           [
-            'React - [npm](https://www.npmjs.com/package/react), [github](https://github.com/facebook/react), [doc](https://reactjs.org/docs/getting-started.html)',
-            reactInfo.stars,
-            reactInfo.version,
-            reactInfo.issues,
-            reactInfo.wkDownload,
+            getRowTitle('react-router'),
+            reactRouterInfo.stars,
+            reactRouterInfo.version,
+            reactRouterInfo.issues,
+            reactRouterInfo.wkDownload,
           ],
           [
-            'Vue - [npm](https://www.npmjs.com/package/vue), [github](https://github.com/vuejs/vue), [doc](https://vuejs.org/v2/guide/l)',
-            vueInfo.stars,
-            vueInfo.version,
-            vueInfo.issues,
-            vueInfo.wkDownload,
-          ],
-          [
-            'Next.js - [npm](https://www.npmjs.com/package/next), [github](https://github.com/vercel/next.js), [doc](https://nextjs.org/docs/getting-started)',
-            nextInfo.stars,
-            nextInfo.version,
-            nextInfo.issues,
-            nextInfo.wkDownload,
-          ],
-          [
-            'Nuxt.js - [npm](https://www.npmjs.com/package/nuxt), [github](https://github.com/nuxt/nuxt.js), [doc](https://nuxtjs.org/guide)',
-            nuxtInfo.stars,
-            nuxtInfo.version,
-            nuxtInfo.issues,
-            nuxtInfo.wkDownload,
+            getRowTitle('vue-router'),
+            vueRouterInfo.stars,
+            vueRouterInfo.version,
+            vueRouterInfo.issues,
+            vueRouterInfo.wkDownload,
           ],
         ],
       },
@@ -148,14 +185,8 @@ function generateMD(table) {
 }
 
 (async function load() {
-  const output = repos.reduce(
-    (res, { name }) => ({
-      ...res,
-      [name]: {},
-    }),
-    {}
-  );
-  const requests = repos.map(({ ghApi }) => axios.get(ghApi));
+  const output = {};
+  const requests = Object.values(repos).map(({ ghApi }) => axios.get(ghApi));
 
   try {
     logger('load GitHub Info');
@@ -163,9 +194,11 @@ function generateMD(table) {
     results.forEach(({ data }) => {
       if (data && data.items && data.items[0]) {
         const { name, stargazers_count, open_issues_count } = data.items[0];
-        if (name && output[name]) {
-          output[name].stars = Number(stargazers_count).toLocaleString();
-          output[name].issues = Number(open_issues_count).toLocaleString();
+        if (name) {
+          output[name] = {
+            stars: Number(stargazers_count).toLocaleString(),
+            issues: Number(open_issues_count).toLocaleString(),
+          };
         }
       }
     });
@@ -177,7 +210,8 @@ function generateMD(table) {
     logger('load NPM Info');
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
-    for (let repo of repos) {
+    for (let k in repos) {
+      const repo = repos[k];
       await page.goto(repo.npmUrl);
 
       const info = await page.evaluate(() => {
@@ -187,18 +221,15 @@ function generateMD(table) {
           (document.querySelector('p.truncate+div+div p') &&
             document.querySelector('p.truncate+div+div p').textContent) ||
           '?';
-        // const issues =
-        //   (document.querySelector('p.f4 > a.truncate') && document.querySelector('p.f4 > a.truncate').textContent) ||
-        //   '?';
         return {
           wkDownload,
           version,
         };
       });
 
-      if (output[repo.name]) {
-        output[repo.name] = {
-          ...output[repo.name],
+      if (output[k]) {
+        output[k] = {
+          ...output[k],
           ...info,
         };
       }
@@ -206,7 +237,14 @@ function generateMD(table) {
     await browser.close();
 
     logger('generate README');
-    const table = generateTable(output.react, output.vue, output['next.js'], output['nuxt.js']);
+    const table = generateTable(
+      output.react,
+      output.vue,
+      output['next.js'],
+      output['nuxt.js'],
+      output['react-router'],
+      output['vue-router']
+    );
     const filePath = path.resolve(__dirname, `../README.md`);
     fs.writeFile(filePath, generateMD(table), 'utf8', err => {
       if (err) throw err;
