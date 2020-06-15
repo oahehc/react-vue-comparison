@@ -2,6 +2,17 @@
 
 This repo is for someone who already familiar with React.js or Vue.js, and wants to find out the relative syntax in another framework.
 
+|                                                                                                                                                       | STAR | LATEST VERSION | OPEN ISSUES | WEEKLY DOWNLOADS |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------- | ---: | :------------- | ----------: | ---------------: |
+| React - [npm](https://www.npmjs.com/package/react), [github](https://github.com/facebook/react), [doc](https://reactjs.org/docs/getting-started.html) |      | 16.13.1        |         508 |        7,796,670 |
+| Vue - [npm](https://www.npmjs.com/package/vue), [github](https://github.com/vuejs/vue), [doc](https://vuejs.org/v2/guide/l)                           |      | 2.6.11         |         321 |        1,608,307 |
+| Next.js - [npm](https://www.npmjs.com/package/next), [github](https://github.com/vercel/next.js), [doc](https://nextjs.org/docs/getting-started)      |      | 9.4.4          |         478 |          574,246 |
+| Nuxt.js - [npm](https://www.npmjs.com/package/nuxt), [github](https://github.com/nuxt/nuxt.js), [doc](https://nuxtjs.org/guide)                       |      | 2.12.2         |         299 |          209,460 |
+
+_UPDATE: 2020/06/14_
+
+---
+
 - [React.js vs Vue.js](/CORE.md)
   - [Render](/CORE.md#render)
   - [Basic-Component](/CORE.md#basic-component)

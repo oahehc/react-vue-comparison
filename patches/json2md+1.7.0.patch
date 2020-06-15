@@ -1,0 +1,29 @@
+diff --git a/node_modules/json2md/.DS_Store b/node_modules/json2md/.DS_Store
+new file mode 100644
+index 0000000..949796c
+Binary files /dev/null and b/node_modules/json2md/.DS_Store differ
+diff --git a/node_modules/json2md/lib/converters.js b/node_modules/json2md/lib/converters.js
+index 9ed0b4f..1359a5f 100644
+--- a/node_modules/json2md/lib/converters.js
++++ b/node_modules/json2md/lib/converters.js
+@@ -117,7 +117,19 @@ converters.table = function (input, json2md) {
+     }
+ 
+     var header = " | " + input.headers.join(" | ") + " | ",
+-        spaces = " | " + input.headers.map(function () {
++        spaces = " | " + input.headers.map(function (_, index) {
++        if (input.aligns && input.aligns[index]) {
++          switch (input.aligns[index]) {
++            case "center":
++              return ":---:";
++            case "right":
++              return "---:";
++            case "left":
++              return ":---";
++            default:
++              return "---";
++          }
++        }
+         return "---";
+     }).join(" | ") + " | ",
+         data = " | " + input.rows.map(function (r) {

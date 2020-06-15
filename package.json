@@ -1,0 +1,38 @@
+{
+  "name": "react-vue-comparison",
+  "version": "1.0.0",
+  "description": "This repo is for someone who already familiar with React.js or Vue.js, and wants to find out the relative syntax in another framework.",
+  "scripts": {
+    "postinstall": "patch-package",
+    "sync": "node scripts/updateReadme.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oahehc/react-vue-comparison.git"
+  },
+  "keywords": [
+    "react",
+    "vue",
+    "nextjs",
+    "nuxtjs"
+  ],
+  "author": "oahehc@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oahehc/react-vue-comparison/issues"
+  },
+  "homepage": "https://github.com/oahehc/react-vue-comparison#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "json2md": "^1.7.0",
+    "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0",
+    "puppeteer": "^3.3.0"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "avoid"
+  }
+}
