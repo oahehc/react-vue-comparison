@@ -5,10 +5,10 @@ This repo is for someone who already familiar with React.js or Vue.js, and wants
 
  |  | STAR | LATEST VERSION | OPEN ISSUES & PR | WEEKLY DOWNLOADS | 
  | :--- | ---: | :---: | ---: | ---: | 
- | React - [npm](https://www.npmjs.com/package/react), [github](https://github.com/facebook/react), [doc](https://reactjs.org/docs/getting-started.html) | 150,471 | 16.13.1 | 630 | 7,717,175
-Vue - [npm](https://www.npmjs.com/package/vue), [github](https://github.com/vuejs/vue), [doc](https://vuejs.org/v2/guide/l) | 165,981 | 2.6.11 | 516 | 1,510,501
-Next.js - [npm](https://www.npmjs.com/package/next), [github](https://github.com/vercel/next.js), [doc](https://nextjs.org/docs/getting-started) | 49,631 | 9.4.4 | 530 | 544,772
-Nuxt.js - [npm](https://www.npmjs.com/package/nuxt), [github](https://github.com/nuxt/nuxt.js), [doc](https://nuxtjs.org/guide) | 27,712 | 2.12.2 | 319 | 209,460 | 
+ | React - [npm](https://www.npmjs.com/package/react), [github](https://github.com/facebook/react), [doc](https://reactjs.org/docs/getting-started.html) | 150,475 | 16.13.1 | 630 | 7,717,175
+Vue - [npm](https://www.npmjs.com/package/vue), [github](https://github.com/vuejs/vue), [doc](https://vuejs.org/v2/guide/l) | 165,989 | 2.6.11 | 516 | 1,590,712
+Next.js - [npm](https://www.npmjs.com/package/next), [github](https://github.com/vercel/next.js), [doc](https://nextjs.org/docs/getting-started) | 49,635 | 9.4.4 | 530 | 573,316
+Nuxt.js - [npm](https://www.npmjs.com/package/nuxt), [github](https://github.com/nuxt/nuxt.js), [doc](https://nuxtjs.org/guide) | 27,717 | 2.12.2 | 319 | 208,901 | 
 
 
 _Update: 2020/6/15_
