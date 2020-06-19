@@ -5,15 +5,15 @@ This repo is for someone who already familiar with React.js or Vue.js, and wants
 
  |  | STAR | LATEST VERSION | OPEN ISSUES & PR | WEEKLY DOWNLOADS | 
  | :--- | ---: | :---: | ---: | ---: | 
- | React - [npm](https://www.npmjs.com/package/react), [github](https://github.com/facebook/react), [doc](https://reactjs.org/docs/getting-started.html) | 150,644 | 16.13.1 | 632 | 7,771,183
-Vue - [npm](https://www.npmjs.com/package/vue), [github](https://github.com/vuejs/vue), [doc](https://vuejs.org/v2/guide/l) | 166,248 | 2.6.11 | 516 | 1,615,803
-Next.js - [npm](https://www.npmjs.com/package/next), [github](https://github.com/vercel/next.js), [doc](https://nextjs.org/docs/getting-started) | 49,730 | 9.4.4 | 557 | 586,565
-Nuxt.js - [npm](https://www.npmjs.com/package/nuxt), [github](https://github.com/nuxt/nuxt.js), [doc](https://nuxtjs.org/guide) | 27,780 | 2.12.2 | 322 | 211,865
-React-Router - [npm](https://www.npmjs.com/package/react-router), [github](https://github.com/ReactTraining/react-router), [doc](https://reacttraining.com/react-router/web/guides/quick-start) | 40,854 | 5.2.0 | 57 | 3,700,312
-Vue-Router - [npm](https://www.npmjs.com/package/vue-router), [github](https://github.com/vuejs/vue-router), [doc](https://router.vuejs.org/guide) | 16,522 | 3.3.4 | 157 | 1,243,229 | 
+ | React - [npm](https://www.npmjs.com/package/react), [github](https://github.com/facebook/react), [doc](https://reactjs.org/docs/getting-started.html) | 150,702 | 16.13.1 | 638 | 7,823,599
+Vue - [npm](https://www.npmjs.com/package/vue), [github](https://github.com/vuejs/vue), [doc](https://vuejs.org/v2/guide/l) | 166,339 | 2.6.11 | 518 | 1,638,347
+Next.js - [npm](https://www.npmjs.com/package/next), [github](https://github.com/vercel/next.js), [doc](https://nextjs.org/docs/getting-started) | 49,768 | 9.4.4 | 559 | 587,220
+Nuxt.js - [npm](https://www.npmjs.com/package/nuxt), [github](https://github.com/nuxt/nuxt.js), [doc](https://nuxtjs.org/guide) | 27,811 | 2.13.0 | 323 | 216,819
+React-Router - [npm](https://www.npmjs.com/package/react-router), [github](https://github.com/ReactTraining/react-router), [doc](https://reacttraining.com/react-router/web/guides/quick-start) | 40,868 | 5.2.0 | 57 | 3,725,121
+Vue-Router - [npm](https://www.npmjs.com/package/vue-router), [github](https://github.com/vuejs/vue-router), [doc](https://router.vuejs.org/guide) | 16,527 | 3.3.4 | 153 | 1,262,450 | 
 
 
-_Update: 2020/6/18_
+_Update: 2020/6/19_
 
 
 ---
