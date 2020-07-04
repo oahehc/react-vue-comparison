@@ -54,7 +54,7 @@ const contents = [
   },
   { h3: 'Tools' },
   {
-    ul: ['[CLI](/CLI.md)'],
+    ul: ['[CLI](/CLI.md)', '[DevTools](/DevTools.md)'],
   },
   { h3: '[React-Router vs Vue-Router](/ROUTER.md)' },
   {
