@@ -73,6 +73,20 @@ const contents = [
       '[Lazy-Loading-and-Code-Splitting](/ROUTER.md#Lazy-Loading-and-Code-Splitting)',
     ],
   },
+  { h3: '[Redux vs Vuex](/STATE_MANAGEMENT.md)' },
+  {
+    ul: [
+      '[Create-Store](/STATE_MANAGEMENT.md#Create-Store)',
+      '[Action](/STATE_MANAGEMENT.md#Action)',
+      '[Async-Action](/STATE_MANAGEMENT.md#Async-Action)',
+      '[Reducer | Mutation](/STATE_MANAGEMENT.md#Reducer-or-Mutation)',
+      '[Combine-Reducers | Modules](/STATE_MANAGEMENT.md#Combine-Reducers-or-Modules)',
+      '[Connect-with-Component](/STATE_MANAGEMENT.md#Connect-with-Component)',
+      '[Middleware | Plugin](/STATE_MANAGEMENT.md#Middleware-or-Plugin)',
+      '[Selector | Getter](/STATE_MANAGEMENT.md#Selector-or-Getter)',
+      '[DevTools](/STATE_MANAGEMENT.md#DevTools)',
+    ],
+  },
   { p: '---' },
 ];
 const reference = [
@@ -85,6 +99,10 @@ const reference = [
       '[Vue.js](https://vuejs.org/v2/guide/#Getting-Started)',
       '[Nuxt.js](https://nuxtjs.org/guide/installation)',
       '[Vue Router](https://router.vuejs.org/guide/)',
+      '[Redux](https://redux.js.org/introduction/getting-started)',
+      '[React-Redux](https://react-redux.js.org/introduction/quick-start)',
+      '[Reselect](https://github.com/reduxjs/reselect)',
+      '[Vuex](https://vuex.vuejs.org/guide/)',
     ],
   },
 ];
@@ -132,6 +150,27 @@ const repos = {
     ghUrl: 'https://github.com/vuejs/vue-router',
     doc: 'https://router.vuejs.org/guide',
   },
+  redux: {
+    name: 'redux',
+    ghApi: 'https://api.github.com/search/repositories?q=redux+in:name+user:reduxjs',
+    npmUrl: 'https://www.npmjs.com/package/redux',
+    ghUrl: 'https://github.com/reduxjs/redux',
+    doc: 'https://redux.js.org/introduction/getting-started',
+  },
+  'react-redux': {
+    name: 'react-redux',
+    ghApi: 'https://api.github.com/search/repositories?q=react-redux+in:name+user:reduxjs',
+    npmUrl: 'https://www.npmjs.com/package/react-redux',
+    ghUrl: 'https://github.com/reduxjs/react-redux',
+    doc: 'https://react-redux.js.org/introduction/quick-start',
+  },
+  vuex: {
+    name: 'vuex',
+    ghApi: 'https://api.github.com/search/repositories?q=vuex+in:name+user:vuejs',
+    npmUrl: 'https://www.npmjs.com/package/vuex',
+    ghUrl: 'https://github.com/vuejs/vuex',
+    doc: 'https://vuex.vuejs.org/guide/',
+  },
 };
 
 function getToday() {
@@ -145,34 +184,22 @@ function getRowTitle(key) {
   if (!repos[key]) return '';
 
   const info = repos[key];
-  return `${info.name} - [npm](${info.npmUrl}), [github](${info.ghUrl}), [doc](${info.doc})`;
+  return `${info.name}: [npm](${info.npmUrl}) [gh](${info.ghUrl}) [doc](${info.doc})`;
 }
-function generateTable(reactInfo, vueInfo, nextInfo, nuxtInfo, reactRouterInfo, vueRouterInfo) {
+
+function generateTable(info) {
   return [
     {
       table: {
-        headers: ['', 'STAR', 'LATEST VERSION', 'OPEN ISSUES & PR', 'WEEKLY DOWNLOADS'],
+        headers: ['', '⭐️', 'VERSION', 'OPEN ISSUES & PR', 'DOWNLOADS/wk'],
         aligns: ['left', 'right', 'center', 'right', 'right'],
-        rows: [
-          [getRowTitle('react'), reactInfo.stars, reactInfo.version, reactInfo.issues, reactInfo.wkDownload],
-          [getRowTitle('vue'), vueInfo.stars, vueInfo.version, vueInfo.issues, vueInfo.wkDownload],
-          [getRowTitle('next.js'), nextInfo.stars, nextInfo.version, nextInfo.issues, nextInfo.wkDownload],
-          [getRowTitle('nuxt.js'), nuxtInfo.stars, nuxtInfo.version, nuxtInfo.issues, nuxtInfo.wkDownload],
-          [
-            getRowTitle('react-router'),
-            reactRouterInfo.stars,
-            reactRouterInfo.version,
-            reactRouterInfo.issues,
-            reactRouterInfo.wkDownload,
-          ],
-          [
-            getRowTitle('vue-router'),
-            vueRouterInfo.stars,
-            vueRouterInfo.version,
-            vueRouterInfo.issues,
-            vueRouterInfo.wkDownload,
-          ],
-        ],
+        rows: Object.keys(repos).map(key => [
+          getRowTitle(key),
+          info[key].stars,
+          info[key].version,
+          info[key].issues,
+          info[key].wkDownload,
+        ]),
       },
     },
     { p: `_Update: ${getToday()}_` },
@@ -237,14 +264,7 @@ function generateMD(table) {
     await browser.close();
 
     logger('generate README');
-    const table = generateTable(
-      output.react,
-      output.vue,
-      output['next.js'],
-      output['nuxt.js'],
-      output['react-router'],
-      output['vue-router']
-    );
+    const table = generateTable(output);
     const filePath = path.resolve(__dirname, `../README.md`);
     fs.writeFile(filePath, generateMD(table), 'utf8', err => {
       if (err) throw err;
