@@ -3,17 +3,20 @@
 
 This repo is for someone who already familiar with React.js or Vue.js, and wants to find out the relative syntax in another framework.
 
- |  | STAR | LATEST VERSION | OPEN ISSUES & PR | WEEKLY DOWNLOADS | 
+ |  | ⭐️ | VERSION | OPEN ISSUES & PR | DOWNLOADS/wk | 
  | :--- | ---: | :---: | ---: | ---: | 
- | React - [npm](https://www.npmjs.com/package/react), [github](https://github.com/facebook/react), [doc](https://reactjs.org/docs/getting-started.html) | 151,404 | 16.13.1 | 616 | 7,608,488
-Vue - [npm](https://www.npmjs.com/package/vue), [github](https://github.com/vuejs/vue), [doc](https://vuejs.org/v2/guide/l) | 167,117 | 2.6.11 | 523 | 1,623,751
-Next.js - [npm](https://www.npmjs.com/package/next), [github](https://github.com/vercel/next.js), [doc](https://nextjs.org/docs/getting-started) | 50,255 | 9.4.4 | 609 | 568,137
-Nuxt.js - [npm](https://www.npmjs.com/package/nuxt), [github](https://github.com/nuxt/nuxt.js), [doc](https://nuxtjs.org/guide) | 28,105 | 2.13.3 | 323 | 232,487
-React-Router - [npm](https://www.npmjs.com/package/react-router), [github](https://github.com/ReactTraining/react-router), [doc](https://reacttraining.com/react-router/web/guides/quick-start) | 41,011 | 5.2.0 | 59 | 3,610,781
-Vue-Router - [npm](https://www.npmjs.com/package/vue-router), [github](https://github.com/vuejs/vue-router), [doc](https://router.vuejs.org/guide) | 16,599 | 3.3.4 | 141 | 1,215,873 | 
+ | React: [npm](https://www.npmjs.com/package/react) [gh](https://github.com/facebook/react) [doc](https://reactjs.org/docs/getting-started.html) | 151,471 | 16.13.1 | 620 | 7,340,947
+Vue: [npm](https://www.npmjs.com/package/vue) [gh](https://github.com/vuejs/vue) [doc](https://vuejs.org/v2/guide/l) | 167,198 | 2.6.11 | 523 | 1,609,243
+Next.js: [npm](https://www.npmjs.com/package/next) [gh](https://github.com/vercel/next.js) [doc](https://nextjs.org/docs/getting-started) | 50,284 | 9.4.4 | 620 | 553,742
+Nuxt.js: [npm](https://www.npmjs.com/package/nuxt) [gh](https://github.com/nuxt/nuxt.js) [doc](https://nuxtjs.org/guide) | 28,122 | 2.13.3 | 328 | 232,427
+React-Router: [npm](https://www.npmjs.com/package/react-router) [gh](https://github.com/ReactTraining/react-router) [doc](https://reacttraining.com/react-router/web/guides/quick-start) | 41,017 | 5.2.0 | 61 | 3,501,460
+Vue-Router: [npm](https://www.npmjs.com/package/vue-router) [gh](https://github.com/vuejs/vue-router) [doc](https://router.vuejs.org/guide) | 16,607 | 3.3.4 | 139 | 1,214,861
+redux: [npm](https://www.npmjs.com/package/redux) [gh](https://github.com/reduxjs/redux) [doc](https://redux.js.org/introduction/getting-started) | 53,659 | 4.0.5 | 46 | 4,484,306
+react-redux: [npm](https://www.npmjs.com/package/react-redux) [gh](https://github.com/reduxjs/react-redux) [doc](https://react-redux.js.org/introduction/quick-start) | 19,668 | 7.2.0 | 29 | 3,469,429
+vuex: [npm](https://www.npmjs.com/package/vuex) [gh](https://github.com/vuejs/vuex) [doc](https://vuex.vuejs.org/guide/) | 24,164 | 3.5.1 | 37 | 1,210,949 | 
 
 
-_Update: 2020/7/3_
+_Update: 2020/7/4_
 
 
 ---
@@ -60,6 +63,7 @@ _Update: 2020/7/3_
 
 
  - [CLI](/CLI.md)
+ - [DevTools](/DevTools.md)
 
 ### [React-Router vs Vue-Router](/ROUTER.md)
 
@@ -77,6 +81,19 @@ _Update: 2020/7/3_
  - [Scroll](/ROUTER.md#Scroll)
  - [Lazy-Loading-and-Code-Splitting](/ROUTER.md#Lazy-Loading-and-Code-Splitting)
 
+### [Redux vs Vuex](/STATE_MANAGEMENT.md)
+
+
+ - [Create-Store](/STATE_MANAGEMENT.md#Create-Store)
+ - [Action](/STATE_MANAGEMENT.md#Action)
+ - [Async-Action](/STATE_MANAGEMENT.md#Async-Action)
+ - [Reducer | Mutation](/STATE_MANAGEMENT.md#Reducer-or-Mutation)
+ - [Combine-Reducers | Modules](/STATE_MANAGEMENT.md#Combine-Reducers-or-Modules)
+ - [Connect-with-Component](/STATE_MANAGEMENT.md#Connect-with-Component)
+ - [Middleware | Plugin](/STATE_MANAGEMENT.md#Middleware-or-Plugin)
+ - [Selector | Getter](/STATE_MANAGEMENT.md#Selector-or-Getter)
+ - [DevTools](/STATE_MANAGEMENT.md#DevTools)
+
 
 ---
 
@@ -89,3 +106,7 @@ _Update: 2020/7/3_
  - [Vue.js](https://vuejs.org/v2/guide/#Getting-Started)
  - [Nuxt.js](https://nuxtjs.org/guide/installation)
  - [Vue Router](https://router.vuejs.org/guide/)
+ - [Redux](https://redux.js.org/introduction/getting-started)
+ - [React-Redux](https://react-redux.js.org/introduction/quick-start)
+ - [Reselect](https://github.com/reduxjs/reselect)
+ - [Vuex](https://vuex.vuejs.org/guide/)
