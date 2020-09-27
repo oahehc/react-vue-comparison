@@ -4,12 +4,14 @@
 
 ```zsh
 npx create-react-app react-template
+npx create-react-app react-template --template typescript
 ```
 
 ### Next.js: create-next-app
 
 ```zsh
 npx create-next-app next-template
+npx create-next-app --example with-typescript next-template
 ```
 
 ### Vue.js: vue-cli
