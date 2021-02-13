@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/oahehc/react-vue-comparison#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "json2md": "^1.7.0",
     "patch-package": "^6.2.2",
     "postinstall-postinstall": "^2.1.0",
