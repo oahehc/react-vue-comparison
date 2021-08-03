@@ -5,18 +5,18 @@ This repo is for someone who already familiar with React.js or Vue.js, and wants
 
  |  | ⭐️ | VERSION | OPEN ISSUES & PR | DOWNLOADS/wk | 
  | :--- | ---: | :---: | ---: | ---: | 
- | React: [npm](https://www.npmjs.com/package/react) [gh](https://github.com/facebook/react) [doc](https://reactjs.org/docs/getting-started.html) | 172,248 | reactjs.org/ | 795 | Gitgithub.com/facebook/react
-Vue: [npm](https://www.npmjs.com/package/vue) [gh](https://github.com/vuejs/vue) [doc](https://vuejs.org/v2/guide/l) | 186,337 | github.com/vuejs/vue#readme | 533 | Gitgithub.com/vuejs/vue
-Next.js: [npm](https://www.npmjs.com/package/next) [gh](https://github.com/vercel/next.js) [doc](https://nextjs.org/docs/getting-started) | 71,144 | nextjs.org | 1,155 | Gitgithub.com/vercel/next.js
-Nuxt.js: [npm](https://www.npmjs.com/package/nuxt) [gh](https://github.com/nuxt/nuxt.js) [doc](https://nuxtjs.org/guide) | 37,240 | github.com/nuxt/nuxt.js#readme | 355 | Gitgithub.com/nuxt/nuxt.js
-React-Router: [npm](https://www.npmjs.com/package/react-router) [gh](https://github.com/ReactTraining/react-router) [doc](https://reacttraining.com/react-router/web/guides/quick-start) | 43,671 | github.com/ReactTraining/react-router#readme | 68 | Gitgithub.com/ReactTraining/react-router
-Vue-Router: [npm](https://www.npmjs.com/package/vue-router) [gh](https://github.com/vuejs/vue-router) [doc](https://router.vuejs.org/guide) | 18,242 | github.com/vuejs/vue-router#readme | 103 | Gitgithub.com/vuejs/vue-router
-redux: [npm](https://www.npmjs.com/package/redux) [gh](https://github.com/reduxjs/redux) [doc](https://redux.js.org/introduction/getting-started) | 56,400 | redux.js.org | 49 | Gitgithub.com/reduxjs/redux
-react-redux: [npm](https://www.npmjs.com/package/react-redux) [gh](https://github.com/reduxjs/react-redux) [doc](https://react-redux.js.org/introduction/quick-start) | 21,226 | github.com/reduxjs/react-redux | 36 | Gitgithub.com/reduxjs/react-redux
-vuex: [npm](https://www.npmjs.com/package/vuex) [gh](https://github.com/vuejs/vuex) [doc](https://vuex.vuejs.org/guide/) | 26,582 | ? | 80 | ? | 
+ | React: [npm](https://www.npmjs.com/package/react) [gh](https://github.com/facebook/react) [doc](https://reactjs.org/docs/getting-started.html) | 172,294 | reactjs.org/ | 794 | Gitgithub.com/facebook/react
+Vue: [npm](https://www.npmjs.com/package/vue) [gh](https://github.com/vuejs/vue) [doc](https://vuejs.org/v2/guide/l) | 186,367 | github.com/vuejs/vue#readme | 533 | Gitgithub.com/vuejs/vue
+Next.js: [npm](https://www.npmjs.com/package/next) [gh](https://github.com/vercel/next.js) [doc](https://nextjs.org/docs/getting-started) | 71,173 | nextjs.org | 1,159 | Gitgithub.com/vercel/next.js
+Nuxt.js: [npm](https://www.npmjs.com/package/nuxt) [gh](https://github.com/nuxt/nuxt.js) [doc](https://nuxtjs.org/guide) | 37,253 | github.com/nuxt/nuxt.js#readme | 359 | Gitgithub.com/nuxt/nuxt.js
+React-Router: [npm](https://www.npmjs.com/package/react-router) [gh](https://github.com/ReactTraining/react-router) [doc](https://reacttraining.com/react-router/web/guides/quick-start) | 43,675 | github.com/ReactTraining/react-router#readme | 66 | Gitgithub.com/ReactTraining/react-router
+Vue-Router: [npm](https://www.npmjs.com/package/vue-router) [gh](https://github.com/vuejs/vue-router) [doc](https://router.vuejs.org/guide) | 18,248 | github.com/vuejs/vue-router#readme | 102 | Gitgithub.com/vuejs/vue-router
+redux: [npm](https://www.npmjs.com/package/redux) [gh](https://github.com/reduxjs/redux) [doc](https://redux.js.org/introduction/getting-started) | 56,408 | redux.js.org | 49 | Gitgithub.com/reduxjs/redux
+react-redux: [npm](https://www.npmjs.com/package/react-redux) [gh](https://github.com/reduxjs/react-redux) [doc](https://react-redux.js.org/introduction/quick-start) | 21,229 | github.com/reduxjs/react-redux | 36 | Gitgithub.com/reduxjs/react-redux
+vuex: [npm](https://www.npmjs.com/package/vuex) [gh](https://github.com/vuejs/vuex) [doc](https://vuex.vuejs.org/guide/) | 26,586 | ? | 80 | ? | 
 
 
-_Update: 2021/8/2_
+_Update: 2021/8/3_
 
 
 ---
