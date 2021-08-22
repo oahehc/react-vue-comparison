@@ -138,10 +138,10 @@ const repos = {
   },
   'react-router': {
     name: 'React-Router',
-    ghApi: 'https://api.github.com/search/repositories?q=react-router+in:name+user:ReactTraining',
+    ghApi: 'https://api.github.com/search/repositories?q=react-router+in:name+user:remix-run',
     npmUrl: 'https://www.npmjs.com/package/react-router',
-    ghUrl: 'https://github.com/ReactTraining/react-router',
-    doc: 'https://reacttraining.com/react-router/web/guides/quick-start',
+    ghUrl: 'https://github.com/remix-run/react-router',
+    doc: 'https://reactrouter.com/',
   },
   'vue-router': {
     name: 'Vue-Router',
@@ -212,11 +212,19 @@ function generateMD(table) {
 }
 
 (async function load() {
-  const output = {};
-  const requests = Object.values(repos).map(({ ghApi }) => axios.get(ghApi));
+  const output = Object.keys(repos).reduce((res, name) => ({
+    ...res,
+    [name]: {
+      stars: '?',
+      version: '?',
+      issues: '?',
+      wkDownload: '?',
+    }
+  }), {})
 
   try {
     logger('load GitHub Info');
+    const requests = Object.values(repos).map(({ ghApi }) => axios.get(ghApi));
     const results = await Promise.all(requests);
     results.forEach(({ data }) => {
       if (data && data.items && data.items[0]) {
@@ -242,12 +250,31 @@ function generateMD(table) {
       await page.goto(repo.npmUrl);
 
       const info = await page.evaluate(() => {
-        const wkDownload =
-          (document.querySelector('p.truncate+div p') && document.querySelector('p.truncate+div p').textContent) || '?';
-        const version =
-          (document.querySelector('p.truncate+div+div p') &&
-            document.querySelector('p.truncate+div+div p').textContent) ||
-          '?';
+        function getElementByTitle(title, selector) {
+          const elements = document.querySelectorAll(selector);
+          let ele = null;
+          for (let i = 0; i < elements.length; i++) {
+            if (elements[i].textContent.includes(title)) {
+              ele = elements[i];
+              break;
+            }
+          }
+          return ele;
+        }
+
+        const wkDownloadTitle = getElementByTitle("Weekly Downloads", "h3");
+        let wkDownload = "?";
+        if (wkDownloadTitle && wkDownloadTitle.nextSibling) {
+          const ele = wkDownloadTitle.nextSibling.querySelector('p');
+          if (ele) {
+            wkDownload = ele.innerText;
+          }
+        }
+        const versionTitle = getElementByTitle("Version", "h3");
+        let version = "?";
+        if (versionTitle && versionTitle.nextSibling) {
+          version = versionTitle.nextSibling.innerText;
+        }
         return {
           wkDownload,
           version,
